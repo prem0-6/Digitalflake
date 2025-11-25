@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
-import User from "../models/user";
+import User from "../modules/user.js";
 const verify = async(req,res,next)=>{
     try{
-        const token = req.cookies?.accessToken || req.headers("Authorization").split(" ")[1];
+        const token = req.cookies?.accessToken || req.header("Authorization")?.split(" ")[1];
         if(!token){
             return res.status(401).json({message:"InvalidToken"});
         }

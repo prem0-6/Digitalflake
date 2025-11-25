@@ -11,7 +11,6 @@ const SubCategorySchema = new mongoose.Schema({
     },
     image:{
         type:String,
-        required:true,
     },
     category : {
         type : mongoose.Schema.Types.ObjectId,
@@ -22,4 +21,4 @@ const SubCategorySchema = new mongoose.Schema({
     timestamps:true,
 });
 const SubCategory = mongoose.model("SubCategory",SubCategorySchema);
-module.exports = SubCategory;
+export default SubCategory;

@@ -9,4 +9,11 @@ app.use(cors({
     allowedHeaders:["Content-Type","Authorization"]
 }));
 app.use(cookieParser());
+
+import UserRoutes from "./routes/UserRoutes.js";
+import CategoryRoutes from "./routes/CategoryRoutes.js";
+
+app.use("/api/users", UserRoutes);
+app.use("/api/category", CategoryRoutes);
+
 export default app;
