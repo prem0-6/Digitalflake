@@ -1,7 +1,7 @@
 import User from "../modules/user.js";
 import bcrypt from "bcryptjs";
 
-export const register = async(req,res)=>{
+const register = async(req,res)=>{
     try{
         const{email,password} = req.body;
         if(!email || !password){
@@ -20,3 +20,4 @@ export const register = async(req,res)=>{
         res.status(500).json({message:error.message});
     }
 }
+export default register;

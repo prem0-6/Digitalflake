@@ -15,7 +15,7 @@ export const addProduct = async (req,res)=>{
 
     }
     catch(error){
-        return res.status(500).json({message:"Couldnt save the "})
+        return res.status(500).json({message:"Couldnt save the product"})
     }
 
 }

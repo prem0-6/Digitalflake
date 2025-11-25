@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
-import User from "../models/user";
-import verify from "../middelware/authmiddleware";
+import User from "../modules/user.js";
+import verify from "../middelware/authmiddleware.js";
 
-export const logout = async(req,res)=>{
+const logout = async(req,res)=>{
     try{
         if(req.user){
             await User.findByIdAndUpdate(req.user._id,{
@@ -10,11 +10,11 @@ export const logout = async(req,res)=>{
             });
         }
         res.clearCookie("refreshToken");
-        req.clearCookie("accessToken");
+        res.clearCookie("accessToken");
         res.json({message:"User logged out successfully"});
     }
     catch(error){
         res.status(500).json({message:error.message});
     }
 }
-        
+        export default logout;

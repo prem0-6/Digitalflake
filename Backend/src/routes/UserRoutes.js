@@ -1,8 +1,8 @@
 import { Router } from "express";
-import Userlogin from "../controllers/Login";
-import Userregister from "../controllers/Register";
-import verify from "../middelware/authmiddleware";
-import Userlogout from "../controllers/Logout";
+import Userlogin from "../controllers/Login.js";
+import Userregister from "../controllers/Register.js";
+import verify from "../middelware/authmiddleware.js";
+import Userlogout from "../controllers/Logout.js";
 
 const router = Router();
 router.route("/register").post(Userregister);

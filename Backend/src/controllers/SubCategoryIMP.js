@@ -1,8 +1,8 @@
-import SubCategory from "../modules/sub_category";
+import SubCategory from "../modules/sub_category.js";
 export const addSubCategory = async(req,res)=>{
     try{
-            const{name,description,category} = req.body;
-    const findname = await SubCategory.findOne({name});
+        const{name,description,category} = req.body;
+        const findname = await SubCategory.findOne({name});
     if(findname){
         return res.status(400).json({message:"The Sub_Category name already exist"})
     }
